@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_saas=self.webpackChunkdocs_saas||[]).push([[3824],{6035:s=>{s.exports=JSON.parse('{"permalink":"/docs-saas/blog/tags/facebook","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

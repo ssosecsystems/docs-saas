@@ -5,7 +5,7 @@ export default {
   title: 'SSOSEC',
   tagline: 'Enterprise Security solutions to protect Users, Apps, Devices and Data',
   url: 'http://ssosec.com',
-  baseUrl: '/',
+  baseUrl: '/docs-saas/',
   favicon: 'img/ssosec-favicon.ico',
 
   themeConfig: {

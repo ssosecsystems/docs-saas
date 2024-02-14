@@ -1,48 +1,74 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import Link from "@docusaurus/core/lib/client/exports/Link";
 
-const FeatureList = [
+const BrowseList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Getting Started',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Getting Started
       </>
     ),
+    link: '/docs/category/getting-started',
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Authentication',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        A process of verifying the identity.
       </>
     ),
+    link: '/docs/category/authentication',
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Authorization',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Specifying access rights/privileges to resources
       </>
     ),
+    link: '/docs/category/authorization',
+  },
+  {
+    title: 'Single Sign-On',
+    description: (
+      <>
+        Login once and access services without re-entering authentication.
+      </>
+    ),
+    link: '/docs/category/single-sign-on',
+  },
+  {
+    title: 'End Point Policies',
+    description: (
+      <>
+        End Point Policies
+      </>
+    ),
+    link: '/docs/category/end-point-policies',
   },
 ];
 
-function Feature({ Svg, title, description }) {
+function Feature({ title, description, link }) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
+    <div className={clsx('col col--3')}
+      style={{
+        border: '1px solid gray',
+        borderRadius: '0.25rem',
+        padding: '4px',
+        margin: '6px',
+        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+      }}
+    >
+      <div className="padding-horiz--md">
+        <div className='row'>
+          &nbsp;&nbsp;
+          <Heading as="h3">
+            <Link to={link}>{title}</Link>
+          </Heading>
+        </div>
         <p>{description}</p>
       </div>
     </div>
@@ -53,8 +79,13 @@ export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
+        <div className='row' style={{ paddingBottom: '4px', marginBottom: '4px' }}>
+          <div className='col'>
+            <h2>Browse By Category</h2>
+          </div>
+        </div>
         <div className="row">
-          {FeatureList.map((props, idx) => (
+          {BrowseList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
         </div>

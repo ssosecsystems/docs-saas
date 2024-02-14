@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Passwordless
+# OIDC
 
 
-Passwordless
+OIDC

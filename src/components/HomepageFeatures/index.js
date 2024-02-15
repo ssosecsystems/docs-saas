@@ -51,10 +51,10 @@ const BrowseList = [
 function Browse({ title, description, link }) {
   return (
     <a className="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href={link}>
-      <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title={title}>
+      <h2 className="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title={title}>
         {title}
       </h2>
-      <p class="cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title={title}>
+      <p className="cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title={title}>
         {description}
       </p>
     </a>

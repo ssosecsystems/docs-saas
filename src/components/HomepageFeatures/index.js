@@ -61,17 +61,26 @@ function Browse({ title, description, link }) {
   return (
     <>
 
-      <a className="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href={link}>
+      <a href={link}
+        className="block max-w-sm p-6 rounded-xl shadow border-solid border-[--ifm-color-emphasis-200]
+         bg-[--ifm-card-background-color] hover:border-[--ifm-link-color] text-[--ifm-link-decoration] hover:text-[--ifm-link-decoration]"
+        style={{ textDecoration: 'none' }}
+      >
+        <h5 className="text-lg">{title}</h5>
+        <p className="text-sm text-gray-700 dark:text-gray-400 mb-0">{description}</p>
+      </a>
+
+      {/*<a className="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href={link}>
         <h2 className="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title={title}>
           {title}
         </h2>
         <p className="cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title={title}>
           {description}
         </p>
-      </a>
+      </a>*/}
 
 
-      <div className="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module hover:cursor-pointer"
+      {/*<div className="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module hover:cursor-pointer"
         onClick={() => { navigate(link) }}
       >
         <h2 className="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title={title}>
@@ -80,7 +89,7 @@ function Browse({ title, description, link }) {
         <p className="cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title={title}>
           {description}
         </p>
-      </div>
+      </div>*/}
     </>
   );
 }

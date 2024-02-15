@@ -1,7 +1,4 @@
-import clsx from 'clsx';
-import Heading from '@theme/Heading';
 import styles from './styles.module.css';
-import Link from "@docusaurus/core/lib/client/exports/Link";
 
 const BrowseList = [
   {
@@ -11,7 +8,7 @@ const BrowseList = [
         Getting Started
       </>
     ),
-    link: '/docs/category/getting-started',
+    link: '/docs-saas/docs/category/getting-started',
   },
   {
     title: 'Authentication',
@@ -20,7 +17,7 @@ const BrowseList = [
         A process of verifying the identity.
       </>
     ),
-    link: '/docs/category/authentication',
+    link: '/docs-saas/docs/category/authentication',
   },
   {
     title: 'Authorization',
@@ -29,7 +26,7 @@ const BrowseList = [
         Specifying access rights/privileges to resources
       </>
     ),
-    link: '/docs/category/authorization',
+    link: '/docs-saas/docs/category/authorization',
   },
   {
     title: 'Single Sign-On',
@@ -38,7 +35,7 @@ const BrowseList = [
         Login once and access services without re-entering authentication.
       </>
     ),
-    link: '/docs/category/single-sign-on',
+    link: '/docs-saas/docs/category/single-sign-on',
   },
   {
     title: 'End Point Policies',
@@ -47,31 +44,35 @@ const BrowseList = [
         End Point Policies
       </>
     ),
-    link: '/docs/category/end-point-policies',
+    link: '/docs-saas/docs/category/end-point-policies',
   },
 ];
 
-function Feature({ title, description, link }) {
+function Browse({ title, description, link }) {
   return (
-    <div className={clsx('col col--3')}
-      style={{
-        border: '1px solid gray',
-        borderRadius: '0.25rem',
-        padding: '4px',
-        margin: '6px',
-        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-      }}
-    >
-      <div className="padding-horiz--md">
-        <div className='row'>
-          &nbsp;&nbsp;
-          <Heading as="h3">
-            <Link to={link}>{title}</Link>
-          </Heading>
+    <a className="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href={link}>
+      <h2 class="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title={title}>
+        {title}
+      </h2>
+      <p class="cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title={title}>
+        {description}
+      </p>
+    </a>
+    /*<div>
+      <div>
+        <div className='flex h-full flex-col gap-2 p-4 rounded border-solid border-[--ifm-color-emphasis-300]'>
+          <div className='flex items-center gap-4'>
+            </span>
+            <div className='text-xl color-[--ifm-heading-color]'>
+              {title}
+            </div>
+          </div>
+          <div className='flex h-full flex-col justify-between gap-4 text-sm'>
+            <p>{description}</p>
+          </div>
         </div>
-        <p>{description}</p>
       </div>
-    </div>
+    </div>*/
   );
 }
 
@@ -79,17 +80,17 @@ export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className='row' style={{ paddingBottom: '4px', marginBottom: '4px' }}>
-          <div className='col'>
-            <h2>Browse By Category</h2>
+        <div className='row m-2'>
+          <h2 className='mb-4 text-xl'>Browse by Category</h2>
+        </div>
+        <div className="row m-2">
+          <div className='gap-4 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+            {BrowseList.map((props, idx) => (
+              <Browse key={idx} {...props} />
+            ))}
           </div>
         </div>
-        <div className="row">
-          {BrowseList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
       </div>
-    </section>
+    </section >
   );
 }

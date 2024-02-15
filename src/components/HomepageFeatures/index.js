@@ -59,16 +59,27 @@ function Browse({ title, description, link }) {
   }
 
   return (
-    <div className="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module hover:cursor-pointer"
-      onClick={() => { navigate(link) }}
-    >
-      <h2 className="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title={title}>
-        {title}
-      </h2>
-      <p className="cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title={title}>
-        {description}
-      </p>
-    </div>
+    <>
+      <a className="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href={link}>
+        <h2 className="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title={title}>
+          {title}
+        </h2>
+        <p className="cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title={title}>
+          {description}
+        </p>
+      </a>
+
+      <div className="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module hover:cursor-pointer"
+        onClick={() => { navigate(link) }}
+      >
+        <h2 className="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title={title}>
+          {title}
+        </h2>
+        <p className="cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title={title}>
+          {description}
+        </p>
+      </div>
+    </>
   );
 }
 

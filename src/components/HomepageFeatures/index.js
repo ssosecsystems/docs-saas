@@ -1,95 +1,54 @@
-import { useHistory } from "react-router-dom";
 import styles from './styles.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRocket, faUserCheck, faKey, faCubes, faFilePowerpoint } from '@fortawesome/free-solid-svg-icons';
 
 const BrowseList = [
   {
     title: 'Getting Started',
-    description: (
-      <>
-        Getting Started
-      </>
-    ),
+    description: (<>Getting Started</>),
     link: '/docs-saas/docs/category/getting-started',
+    icon: <FontAwesomeIcon icon={faRocket} />,
   },
   {
     title: 'Authentication',
-    description: (
-      <>
-        A process of verifying the identity.
-      </>
-    ),
+    description: (<>A process of verifying the identity.</>),
     link: '/docs-saas/docs/category/authentication',
+    icon: <FontAwesomeIcon icon={faUserCheck} />,
   },
   {
     title: 'Authorization',
-    description: (
-      <>
-        Specifying access rights/privileges to resources
-      </>
-    ),
+    description: (<>Specifying access rights/privileges to resources</>),
     link: '/docs-saas/docs/category/authorization',
+    icon:<FontAwesomeIcon icon={faKey} />,
   },
   {
     title: 'Single Sign-On',
-    description: (
-      <>
-        Login once and access services without re-entering authentication.
-      </>
-    ),
+    description: (<>Login once and access services without re-entering authentication.</>),
     link: '/docs-saas/docs/category/single-sign-on',
+    icon:<FontAwesomeIcon icon={faCubes} />,
   },
   {
     title: 'End Point Policies',
-    description: (
-      <>
-        End Point Policies
-      </>
-    ),
+    description: (<>End Point Policies</>),
     link: '/docs-saas/docs/category/end-point-policies',
+    icon:<FontAwesomeIcon icon={faFilePowerpoint} />
   },
 ];
 
-function Browse({ title, description, link }) {
-  let history = useHistory();
-
-  const navigate = (link) => {
-    history.push({
-      pathname: link
-    })
-  }
-
+function Browse({ title, description, link, icon }) {
   return (
     <>
-
       <a href={link}
         className="block max-w-sm p-6 rounded-xl shadow border-solid border-[--ifm-color-emphasis-200]
          bg-[--ifm-card-background-color] hover:border-[--ifm-link-color] text-[--ifm-link-decoration] hover:text-[--ifm-link-decoration]"
         style={{ textDecoration: 'none' }}
       >
-        <h5 className="text-lg">{title}</h5>
+        <div className="flex items-center gap-4 mb-1">
+          <span className={'m-0 p-0'}>{icon}</span>
+          <h5 className="text-lg m-0 p-0">{title}</h5>
+        </div>
         <p className="text-sm text-gray-700 dark:text-gray-400 mb-0">{description}</p>
       </a>
-
-      {/*<a className="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href={link}>
-        <h2 className="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title={title}>
-          {title}
-        </h2>
-        <p className="cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title={title}>
-          {description}
-        </p>
-      </a>*/}
-
-
-      {/*<div className="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module hover:cursor-pointer"
-        onClick={() => { navigate(link) }}
-      >
-        <h2 className="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title={title}>
-          {title}
-        </h2>
-        <p className="cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title={title}>
-          {description}
-        </p>
-      </div>*/}
     </>
   );
 }

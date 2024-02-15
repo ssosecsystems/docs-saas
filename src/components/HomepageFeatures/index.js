@@ -1,3 +1,4 @@
+import { useHistory } from "react-router-dom";
 import styles from './styles.module.css';
 
 const BrowseList = [
@@ -49,30 +50,25 @@ const BrowseList = [
 ];
 
 function Browse({ title, description, link }) {
+  let history = useHistory();
+
+  const navigate = (link) => {
+    history.push({
+      pathname: link
+    })
+  }
+
   return (
-    <a className="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" href={link}>
+    <div className="card padding--lg cardContainer_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module hover:cursor-pointer"
+      onClick={() => { navigate(link) }}
+    >
       <h2 className="text--truncate cardTitle_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title={title}>
         {title}
       </h2>
       <p className="cardDescription_node_modules-@docusaurus-theme-classic-lib-theme-DocCard-styles-module" title={title}>
         {description}
       </p>
-    </a>
-    /*<div>
-      <div>
-        <div className='flex h-full flex-col gap-2 p-4 rounded border-solid border-[--ifm-color-emphasis-300]'>
-          <div className='flex items-center gap-4'>
-            </span>
-            <div className='text-xl color-[--ifm-heading-color]'>
-              {title}
-            </div>
-          </div>
-          <div className='flex h-full flex-col justify-between gap-4 text-sm'>
-            <p>{description}</p>
-          </div>
-        </div>
-      </div>
-    </div>*/
+    </div>
   );
 }
 
